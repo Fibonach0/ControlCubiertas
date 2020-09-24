@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<style>
+    /* Form */
+    
+    .form-inline {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    /* Margenes */
+    
+    .form-inline label {
+        margin: 5px 10px 5px 0;
+    }
+    /* CAmpos de ingreso */
+    
+    .form-inline input {
+        vertical-align: middle;
+        margin: 5px 10px 5px 0;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+    /* Boton de Submit */
+    
+    .form-inline button {
+        padding: 10px 60px;
+        background-color: dodgerblue;
+        border: 1px solid #ddd;
+        color: white;
+        vertical-align: bottom;
+    }
+    
+    .form-inline button:hover {
+        background-color: royalblue;
+    }
+    
+    .Ejes {
+        border-bottom-style: solid;
+    }
+    
+    Cajas {
+        border-style: solid;
+    }
+    /*Parte Responsive */
+    
+    @media (max-width: 800px) {
+        .form-inline input {
+            margin: 10px 0;
+        }
+        .form-inline {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+    /* The container */
+    
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 12px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    /* ESconde el checkbox por default */
+    
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    /* "Checkbox" personalizado" */
+    
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: #eee;
+    }
+    /* Al pasar el mouse se hace un fondo gris */
+    
+    .container:hover input~.checkmark {
+        background-color: #ccc;
+    }
+    /* Cuando se selecciona la caja, se hace azul */
+    
+    .container input:checked~.checkmark {
+        background-color: #2196F3;
+    }
+    /* Crea el "Check" y loi esconde cuando no esta. */
+    
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    /* Muestra el "Check" */
+    
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+    /* EStilo del "check" y la caja */
+    
+    .container .checkmark:after {
+        left: 5px;
+        top: 2px;
+        width: 2px;
+        height: 5px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+</style>
+<tittle>
+    Control de Cubiertas.
+</tittle>
+
+<head>
+    <p>CUBIERTAS!</p>
+
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // Agrega un cero en los número  < 10
+            return i;
+        }
+    </script>
+</head>
+
+<body onload="startTime()">
+    <div id="txt"></div>
+
+
+    <!--
+Fecha
+-->
+    <br>
+    <code>
+<script>
+
+public class Main {
+
+    public static void main(String[] args){        
+        LocalDate l_date = LocalDate.now();        
+        System.out.println("Current date: " + l_date);
+        
+        LocalTime l_time = LocalTime.now();        
+        System.out.println("Current time: " + l_time);
+    }
+}
+</script>
+</code>
+    <form action="/action_page.php">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+        <input type="submit">
+    </form>
+
+    <form class="form-inline" action="mailto:iantuna@cantarini.com.ar" method="post" enctyppe="text">
+        <label for="NumeroInterno">Interno:</label>
+        <input type="text" id="NumeroInterno" placeholder="Número de interno." name="NumeroInterno" required>
+        <label for="NombreChofer">Chofer:</label>
+        <input type="text" id="NombreChofer" placeholder="Nombre del chofer." name="NombreChofer" required>
+        <br>
+        <label class="container"> Dos Ejes.
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
+        <label class="container">Tres Ejes
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+        <br>
+        <div>
+            <label for="PrimerEje">Primer Eje:</label>
+            <input type="text" id="Ejes" placeholder="Primer Eje " name="PrimerEje" required>
+            <input type="text" id="Ejes" placeholder="Primer Eje " name="PrimerEje" required>
+            <input type="text" id="Ejes" placeholder="Primer Eje " name="PrimerEje" required>
+            <input type="text" id="Ejes" placeholder="Primer Eje " name="PrimerEje" required>
+            <br><br>
+            <label for="SegundoEje">Segundo Eje: </label>
+            <input type="text" id="Ejes" placeholder="Segundo Eje " name="SegundoEje" required>
+            <input type="text" id="Ejes" placeholder="Segundo Eje " name="SegundoEje" required>
+            <input type="text" id="Ejes" placeholder="Segundo Eje " name="SegundoEje" required>
+            <input type="text" id="Ejes" placeholder="Segundo Eje " name="SegundoEje" required>
+            <br><br>
+            <label for="TercerEje">Tercer Eje: </label>
+            <input type="text" id="Ejes" placeholder="TercerEje " name="TercerEje" required>
+            <input type="text" id="Ejes" placeholder="TercerEje " name="TercerEje" required>
+            <input type="text" id="Ejes" placeholder="TercerEje " name="TercerEje" required>
+            <input type="text" id="Ejes" placeholder="TercerEje " name="TercerEje" required>
+        </div>
+        <br><br><br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+
+</body>
+
+</html>
